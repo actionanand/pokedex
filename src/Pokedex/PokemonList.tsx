@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 
-export const PokemonList = () => {
+const PokemonList = () => {
   let limit = 100;
   let offset = 0;
   const { data, isLoading } = useQuery(
