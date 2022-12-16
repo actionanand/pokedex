@@ -1,6 +1,9 @@
 import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
 
-const PokemonDetails = ({ name }: { name: string }) => {
+const PokemonDetails = () => {
+  const { name } = useParams<{ name: string }>();
+  
   const { data, isLoading } = useQuery(
     ['pokeman-details', name],
     async () => {
