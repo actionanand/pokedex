@@ -3,7 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-const PokemonDetails = React.lazy(() => import('./Pokedex/PokemonDetails'));
+const PokemonDetails = React.lazy(() => import('./Pokedex/PokemonDetails/PokemonDetails'));
 const PokemonList = lazy(() => import('./Pokedex/PokemonList'));
 
 const LazyPokemonList = () => (
