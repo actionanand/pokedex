@@ -1,11 +1,15 @@
-import './App.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-function App() {
+import PokemonList from './Pokedex/PokemonList';
+
+const queryClient = new QueryClient();
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>working</h1>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <PokemonList />
+    </QueryClientProvider>
   );
-}
+};
 
 export default App;
