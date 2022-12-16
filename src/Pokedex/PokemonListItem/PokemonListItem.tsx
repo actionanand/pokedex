@@ -6,7 +6,7 @@ const PokemonListItem = ({ data }: any) => (
   <Link to={`details/${data.name}`} className={styles['item-container']}>
     <div>
       <img
-        src={data.sprites.front_default}
+        src={`${process.env.REACT_APP_API_POKEMON_IMG_URL}${data.id}.svg` || data.sprites.front_default }
         alt={data.name}
         width="96"
         height="96"
