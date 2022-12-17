@@ -1,9 +1,20 @@
+import { Name, PokemonSpecies } from './model/pokemon-species.model';
+import { Pokemon, PokemonList } from './model/pokemon.model';
+
+export interface DetailsFetcher extends Pokemon {
+  names: Name[];
+}
+
+export interface ListFetcher extends PokemonList {
+  page: number;
+}
+
 export const detailFetcher = (name: string) => async () => {
   const detailsResp = await fetch(`${process.env.REACT_APP_API_URL}pokemon/${name}`);
-  const details = await detailsResp.json();
+  const details: Pokemon = await detailsResp.json();
 
   const speciesResp = await fetch(details.species.url);
-  const species = await speciesResp.json();
+  const species: PokemonSpecies = await speciesResp.json();
 
   return { ...details, names: species.names };
 };
@@ -15,6 +26,6 @@ export const listfetcher =
     // let offset = 0;
 
     const listResp = await fetch(`${process.env.REACT_APP_API_URL}pokemon?limit=${limit}&offset=${pageParam * 100}`);
-    const respJson = await listResp.json();
+    const respJson: PokemonList = await listResp.json();
     return { ...respJson, page: pageParam };
   };

@@ -42,6 +42,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Resources
 
 - [Poke API - doc](https://pokeapi.co/)
+- [The Clean Coder: A Code of Conduct for Professional Programmers (Robert C. Martin Series) - Amazon India](https://www.amazon.in/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073)
+- [Fetch, Cache, and Update Data Effortlessly with React Query](https://ilxanlar.medium.com/fetch-cache-and-update-data-effortlessly-with-react-query-445e799a84e4)
+- [Fetching And Updating Data With React Query](https://blog.openreplay.com/fetching-and-updating-data-with-react-query/)
+- [RegExp.prototype.test() mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
+- [Build a Custom React Search Bar Component Using a Dynamic Regex](https://blog.devgenius.io/build-a-custom-react-search-bar-component-using-a-dynamic-regex-cd89fdd496f5)
+- [Infinite loading with React Query](https://daily-dev-tips.com/posts/infinite-loading-with-react-query/)
 
 ## Learn More
 
