@@ -35,8 +35,8 @@ const PokemonList = ({ filter: filterFn }: any) => {
         data?.pages.map((page: ListFetcher) =>
           page.results.filter(filterFn).map((result: NamedAPIResource) => (
             <Link
-              to={`details/${result.name}`}
-              className={styles['pokemon-link']}
+              to={`details/${result.name}`} id='cool'
+              className={[styles['pokemon-link'], styles['pokemon-link-hover']].join(' ')}
               key={result.name}
               onClick={handlePokemonClick}
             >
@@ -46,7 +46,7 @@ const PokemonList = ({ filter: filterFn }: any) => {
         )}
       {hasNextPage && (
         <button onClick={() => fetchNextPage()} className={styles['fetch-more-btn']}>
-          Fetch Next Page
+          Fetch More
         </button>
       )}
     </>
