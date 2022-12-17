@@ -10,7 +10,7 @@ const Pokodex = () => {
 
   const filterPokemon = (search: any) => {
     if (!pokemon.searchQuery.trim()) {
-      return true;
+      return true; // true will return all results; if u simply return without `true`, 0 results will be displayed.
     }
 
     return new RegExp(pokemon.searchQuery, 'i').test(search.name);

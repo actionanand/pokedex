@@ -8,10 +8,13 @@ export const detailFetcher = (name: string) => async () => {
   return { ...details, names: species.names };
 };
 
-export const listfetcher = () => async () => {
-  let limit = 100;
-  let offset = 0;
+export const listfetcher =
+  () =>
+  async ({ pageParam = 0 }) => {
+    let limit = 100;
+    // let offset = 0;
 
-  const listResp = await fetch(`${process.env.REACT_APP_API_URL}pokemon?limit=${limit}&offset=${offset}`);
-  return await listResp.json();
-};
+    const listResp = await fetch(`${process.env.REACT_APP_API_URL}pokemon?limit=${limit}&offset=${pageParam * 100}`);
+    const respJson = await listResp.json();
+    return { ...respJson, page: pageParam };
+  };
