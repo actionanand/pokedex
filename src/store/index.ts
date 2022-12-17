@@ -3,8 +3,8 @@ import { createContext, useContext } from 'react';
 import PokemonStore from './PokemonStore';
 
 const store = {
-  pokemon: PokemonStore
-}
+  pokemon: PokemonStore(),
+};
 
 export const StoreCtx = createContext(store);
 

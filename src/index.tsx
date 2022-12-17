@@ -9,9 +9,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store, { StoreCtx } from './store';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <StoreCtx.Provider value={store}>

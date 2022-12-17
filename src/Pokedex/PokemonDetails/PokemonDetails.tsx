@@ -9,13 +9,9 @@ import PokemonListItem from '../PokemonListItem';
 const PokemonDetails = () => {
   const { name = '' } = useParams<{ name: string }>();
 
-  const { data, isLoading } = useQuery(
-    ['pokeman-details', name],
-    detailFetcher(name),
-    {
-      staleTime: 6_00_000,
-    },
-  );
+  const { data, isLoading } = useQuery(['pokeman-details', name], detailFetcher(name), {
+    staleTime: 6_00_000,
+  });
   return (
     <>
       <Link to="/" className={styles['nav-bar']}>

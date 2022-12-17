@@ -4,12 +4,12 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const PokemonDetails = React.lazy(() => import('./Pokedex/PokemonDetails/PokemonDetails'));
-const PokemonList = lazy(() => import('./Pokedex/PokemonList'));
+const Pokedex = lazy(() => import('./Pokedex'));
 
-const LazyPokemonList = () => (
+const LazyPokedex = () => (
   <>
     <Suspense fallback={<div> Loading Pokemons... </div>}>
-      <PokemonList />
+      <Pokedex />
     </Suspense>
   </>
 );
@@ -29,12 +29,9 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>
-        <Route path="/" element={<LazyPokemonList />} />
+        <Route path="/" element={<LazyPokedex />} />
         <Route path="details/:name" element={<LazyPokemonDetails />} />
-        <Route
-          path="*"
-          element={shouldRedirect ? <Navigate replace to="/" /> : null}
-        />
+        <Route path="*" element={shouldRedirect ? <Navigate replace to="/" /> : null} />
       </Routes>
     </QueryClientProvider>
   );

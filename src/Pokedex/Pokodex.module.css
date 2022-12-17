@@ -1,0 +1,19 @@
+.input {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.pokemon-link {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pokemon-link:nth-child(2n) {
+  background-color: #f6f6f6;
+  display: block;
+}

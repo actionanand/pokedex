@@ -6,7 +6,7 @@ export const detailFetcher = (name: string) => async () => {
   const species = await speciesResp.json();
 
   return { ...details, names: species.names };
-}
+};
 
 export const listfetcher = () => async () => {
   let limit = 100;
@@ -14,4 +14,4 @@ export const listfetcher = () => async () => {
 
   const listResp = await fetch(`${process.env.REACT_APP_API_URL}pokemon?limit=${limit}&offset=${offset}`);
   return await listResp.json();
-}
+};
