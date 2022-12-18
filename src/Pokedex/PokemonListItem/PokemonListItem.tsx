@@ -12,6 +12,7 @@ const PokemonListItem = ({ data }: { data: DetailsFetcher | undefined }) => (
         alt={data?.name}
         width="96"
         height="96"
+        draggable={false}
       />
     </div>
     <div className={styles['item-content']}>
