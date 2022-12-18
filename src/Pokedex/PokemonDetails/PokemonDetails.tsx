@@ -12,7 +12,7 @@ const PokemonDetails = () => {
       <Link to="/" className={styles['nav-bar']}>
         &lt; back to Pokedex
       </Link>
-      <PokemonListItem name={name} url={''} />
+      <PokemonListItem name={name} url={'details-page'} />
     </>
   );
 };

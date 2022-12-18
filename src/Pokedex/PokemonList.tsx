@@ -35,12 +35,13 @@ const PokemonList = ({ filter: filterFn }: any) => {
         data?.pages.map((page: ListFetcher) =>
           page.results.filter(filterFn).map((result: NamedAPIResource) => (
             <Link
-              to={`details/${result.name}`} id='cool'
+              to={`details/${result.name}`}
+              id="cool"
               className={[styles['pokemon-link'], styles['pokemon-link-hover']].join(' ')}
               key={result.name}
               onClick={handlePokemonClick}
             >
-              <PokemonListItem key={result.name} {...result}></PokemonListItem>
+              <PokemonListItem key={result.name} name={result.name} url={'list-page'}></PokemonListItem>
             </Link>
           )),
         )}
