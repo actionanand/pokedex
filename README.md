@@ -48,6 +48,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - [RegExp.prototype.test() mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
 - [Build a Custom React Search Bar Component Using a Dynamic Regex](https://blog.devgenius.io/build-a-custom-react-search-bar-component-using-a-dynamic-regex-cd89fdd496f5)
 - [Infinite loading with React Query](https://daily-dev-tips.com/posts/infinite-loading-with-react-query/)
+- [Color hunt](https://colorhunt.co/palettes/green)
 
 ## Learn More
 

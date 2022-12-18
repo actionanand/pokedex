@@ -14,7 +14,9 @@ root.render(
   <React.StrictMode>
     <StoreCtx.Provider value={store}>
       <BrowserRouter>
-        <App />
+        <div className="App">
+          <App />
+        </div>
       </BrowserRouter>
     </StoreCtx.Provider>
   </React.StrictMode>,

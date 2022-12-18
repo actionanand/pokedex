@@ -16,11 +16,12 @@ const Pokodex = () => {
 
     return new RegExp(pokemon.searchQuery, 'i').test(search.name);
   };
-  
+
   return (
     <>
       <input
         type="text"
+        id={styles['inputID']}
         placeholder="Enter the name of a pokemon"
         className={styles.input}
         onChange={(el) => pokemon.handleSearchQueryChange(el.target.value)}
