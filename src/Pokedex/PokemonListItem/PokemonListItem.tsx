@@ -13,6 +13,10 @@ const PokemonListItem = ({ data }: { data: DetailsFetcher | undefined }) => (
         width="96"
         height="96"
         draggable={false}
+        onError={(e: any) => {
+          e.target.src = 'https://upload.wikimedia.org/wikipedia/commons/2/23/Pok%C3%A9mon_GO_logo.svg';
+          e.target.style = 'width: 96px; height: 96px';
+        }}
       />
     </div>
     <div className={styles['item-content']}>

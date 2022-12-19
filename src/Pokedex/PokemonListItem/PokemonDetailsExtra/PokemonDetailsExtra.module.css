@@ -1,0 +1,32 @@
+.style-card {
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px #a4be7b;
+  /* color: #253b56; */
+  margin: 12px 0px;
+  padding: 4px 16px 20px 16px;
+  font-family: Avenir;
+}
+
+.style-card-title {
+  display: flex;
+  justify-content: center;
+  font-family: Avenir-Heavy;
+  font-size: 20;
+  color: #a4be7b;
+  font-weight: 600;
+  margin: 12px 0px;
+}
+
+.style-card-favor-text {
+  font-style: italic;
+}
+
+.style-card > div {
+  display: flex;
+  margin-bottom: .8rem;
+}
+
+.style-card > div > strong {
+  width: 6.2rem;
+  font-weight: bold;
+}
