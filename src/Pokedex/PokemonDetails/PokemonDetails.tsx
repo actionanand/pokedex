@@ -1,24 +1,35 @@
-import { useQuery } from 'react-query';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect, ClipboardEvent } from 'react';
 
 import styles from './PokemonDetails.module.css';
 
-import { detailFetcher } from '../../Api';
+import { Link, useParams } from 'react-router-dom';
 import PokemonListItem from '../PokemonListItem';
 
 const PokemonDetails = () => {
   const { name = '' } = useParams<{ name: string }>();
 
-  const { data, isLoading } = useQuery(['pokeman-details', name], detailFetcher(name), {
-    staleTime: 6_00_000,
-  });
+  useEffect(() => {
+    const ctxMenue = (e: MouseEvent) => e.preventDefault();
+
+    document.addEventListener('contextmenu', ctxMenue);
+
+    return () => {
+      document.removeEventListener('contextmenu', ctxMenue);
+    };
+  }, []);
+
   return (
-    <>
+    <div
+      onCopy={(e: ClipboardEvent<HTMLDivElement>) => {
+        e.clipboardData.setData('text/plain', 'Copying is not allowed here!');
+        e.preventDefault();
+      }}
+    >
       <Link to="/" className={styles['nav-bar']}>
-        &lt; back to Pokedex
+        &lt; Back to Pokedex
       </Link>
-      {!isLoading && <PokemonListItem name={name} url={data.url} />}
-    </>
+      <PokemonListItem name={name} url={'details-page'} />
+    </div>
   );
 };
 
