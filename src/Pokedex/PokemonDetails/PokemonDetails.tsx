@@ -9,9 +9,13 @@ const PokemonDetails = () => {
   const { name = '' } = useParams<{ name: string }>();
 
   useEffect(() => {
-    document.addEventListener('contextmenu', (e: MouseEvent) => {
-      e.preventDefault();
-    });
+    const ctxMenue = (e: MouseEvent) => e.preventDefault();
+
+    document.addEventListener('contextmenu', ctxMenue);
+
+    return () => {
+      document.removeEventListener('contextmenu', ctxMenue);
+    };
   }, []);
 
   return (
