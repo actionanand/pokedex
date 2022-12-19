@@ -8,6 +8,8 @@ import PokemonListItem from '../PokemonListItem';
 const PokemonDetails = () => {
   const { name = '' } = useParams<{ name: string }>();
 
+  let pokemonName;
+
   useEffect(() => {
     const ctxMenue = (e: MouseEvent) => e.preventDefault();
 
@@ -17,6 +19,12 @@ const PokemonDetails = () => {
       document.removeEventListener('contextmenu', ctxMenue);
     };
   }, []);
+
+  if (!Number(name)) {
+    pokemonName = name.toLowerCase();
+  } else {
+    pokemonName = name;
+  }
 
   return (
     <div
@@ -28,7 +36,7 @@ const PokemonDetails = () => {
       <Link to="/" className={styles['nav-bar']}>
         &lt; Back to Pokedex
       </Link>
-      <PokemonListItem name={name} url={'details-page'} />
+      <PokemonListItem name={pokemonName} url={'details-page'} />
     </div>
   );
 };

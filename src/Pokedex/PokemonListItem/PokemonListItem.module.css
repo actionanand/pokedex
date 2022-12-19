@@ -9,3 +9,30 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error h1 {
+  font-size: 20;
+  color: #e6676b;
+  font-weight: 600;
+}
+
+.error div > span {
+  color: #e6676b;
+}
+
+.error div a {
+  text-decoration: none;
+  color: #e6676b;
+}
+
+.error div a:hover {
+  cursor: pointer;
+  color: #a4be7b;
+}
